@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	@RequestMapping("/")
 	public String home() {
-		return "The boat, reporting for duty";
+		return "The boat, reporting for duty. built using spring boot";
 	}
 }

@@ -14,7 +14,7 @@ import com.boot.theboat.controller.HomeController;
 public class TheBoatApplicationTests {
 
 	@Test
-	public void contextLoads() {
+	public void testHome() {
 		HomeController hc = new HomeController();
 		String result = hc.home();
 		assertEquals(result, "The boat, reporting for duty. built using spring boot");

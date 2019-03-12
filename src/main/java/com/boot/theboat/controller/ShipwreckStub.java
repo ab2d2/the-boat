@@ -5,8 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
+
 import com.boot.theboat.model.Shipwreck;
 
+@Service
 public class ShipwreckStub {
 	private static Map<Long, Shipwreck> wrecks = new HashMap<Long, Shipwreck>();
 	private static Long idIndex = 3L;
@@ -21,27 +24,27 @@ public class ShipwreckStub {
 		wrecks.put(3L, c);
 	}
 
-	public static List<Shipwreck> list() {
+	public List<Shipwreck> list() {
 		return new ArrayList<Shipwreck>(wrecks.values());
 	}
 
-	public static Shipwreck create(Shipwreck wreck) {
+	public Shipwreck create(Shipwreck wreck) {
 		idIndex += idIndex;
 		wreck.setId(idIndex);
 		wrecks.put(idIndex, wreck);
 		return wreck;
 	}
 
-	public static Shipwreck get(Long id) {
+	public Shipwreck get(Long id) {
 		return wrecks.get(id);
 	}
 
-	public static Shipwreck update(Long id, Shipwreck wreck) {
+	public Shipwreck update(Long id, Shipwreck wreck) {
 		wrecks.put(id, wreck);
 		return wreck;
 	}
 
-	public static Shipwreck delete(Long id) {
+	public Shipwreck delete(Long id) {
 		return wrecks.remove(id);
 	}
 }

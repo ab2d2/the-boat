@@ -17,8 +17,11 @@ import com.boot.theboat.model.Shipwreck;
 @RequestMapping("api/v1")
 public class ShipWreckController {
 	
-	@Autowired
-	private ShipwreckStub dataStore;
+	 private ShipwreckStub dataStore;
+	
+	 public ShipWreckController(ShipwreckStub dataStore) {
+	        this.dataStore = dataStore;
+	 }
 	
 	
 	@RequestMapping(value = "shipwrecks", method = RequestMethod.GET)
